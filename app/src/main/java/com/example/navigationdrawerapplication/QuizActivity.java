@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 public class QuizActivity extends AppCompatActivity
 {
     Button bt1 , bt2 , bt3 , bt4;
-    TextView tw1 , tw2;
+    TextView tw1 , tw2 , textView;
 
     private questionSet mQuestions = new questionSet();
 
@@ -32,6 +33,19 @@ public class QuizActivity extends AppCompatActivity
 
         tw1 = (TextView) findViewById(R.id.tw1);
         tw2 = (TextView) findViewById(R.id.tw2);
+        textView = (TextView) findViewById(R.id.textView);
+
+        new CountDownTimer(1000*10 , 1000){
+            @Override
+            public void onTick(long millisUntilFinished) {
+                textView.setText(String.valueOf(millisUntilFinished/1000));
+            }
+
+            @Override
+            public void onFinish() {
+                gameOver();
+            }
+        }.start();
 
         tw1.setText("Score: " + mScore);
 
