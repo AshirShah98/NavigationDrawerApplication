@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -44,13 +45,15 @@ public class MainActivity extends AppCompatActivity
                 switch (menuItem.getItemId())
                 {
                     case R.id.menu_calculator :
-                        Toast.makeText(getApplicationContext(),"Calculator",Toast.LENGTH_LONG).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        Intent intent_1 = new Intent(getApplicationContext() , CalculatorActivity.class);
+                        startActivity(intent_1);
                         break;
 
                     case R.id.menu_quiz :
-                        Toast.makeText(getApplicationContext(),"Quiz",Toast.LENGTH_LONG).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        Intent intent_2 = new Intent(getApplicationContext() , QuizActivity.class);
+                        startActivity(intent_2);
                         break;
                 }
 
