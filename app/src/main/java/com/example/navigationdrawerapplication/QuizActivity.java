@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class QuizActivity extends AppCompatActivity
 {
     Button bt1 , bt2 , bt3 , bt4;
@@ -19,6 +21,8 @@ public class QuizActivity extends AppCompatActivity
 
     private String mAns;
     private int mScore = 0 , chk = 0;
+
+    public Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,7 +53,7 @@ public class QuizActivity extends AppCompatActivity
 
         tw1.setText("Score: " + mScore);
 
-        updateQuestion(chk);
+        updateQuestion(random.nextInt(10));
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +67,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
                 else
                 {
@@ -72,7 +76,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
 
             }
@@ -91,7 +95,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
                 else
                 {
@@ -100,7 +104,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
 
             }
@@ -119,7 +123,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
                 else
                 {
@@ -128,7 +132,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
 
             }
@@ -147,7 +151,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
                 else
                 {
@@ -156,7 +160,7 @@ public class QuizActivity extends AppCompatActivity
                     if(chk == 10)
                         gameOver();
                     else
-                        updateQuestion(chk);
+                        updateQuestion(random.nextInt(10));
                 }
 
             }
